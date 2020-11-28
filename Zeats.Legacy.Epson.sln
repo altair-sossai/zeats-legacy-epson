@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeats.Legacy.Epson", "Zeats.Legacy.Epson\Zeats.Legacy.Epson.csproj", "{2CD32378-C47E-4CB3-9848-9BEDB0C0B4FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeats.Legacy.Epson.UnitTest", "Zeats.Legacy.Epson.UnitTest\Zeats.Legacy.Epson.UnitTest.csproj", "{DFB82C09-6D87-4D15-9FE1-6890FB6E0B76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{AABE5F51-A45A-45A3-8AE5-CE32D90531A1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".devops", ".devops", "{20AF2437-62CF-42AA-9106-82DE9F18253E}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CD32378-C47E-4CB3-9848-9BEDB0C0B4FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD32378-C47E-4CB3-9848-9BEDB0C0B4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD32378-C47E-4CB3-9848-9BEDB0C0B4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD32378-C47E-4CB3-9848-9BEDB0C0B4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB82C09-6D87-4D15-9FE1-6890FB6E0B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB82C09-6D87-4D15-9FE1-6890FB6E0B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB82C09-6D87-4D15-9FE1-6890FB6E0B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB82C09-6D87-4D15-9FE1-6890FB6E0B76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1E71DBE-5ACB-4AE0-82C0-4E3640453212}
+	EndGlobalSection
+EndGlobal
