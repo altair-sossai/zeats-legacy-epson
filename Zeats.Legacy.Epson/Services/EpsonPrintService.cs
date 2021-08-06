@@ -38,7 +38,21 @@ namespace Zeats.Legacy.Epson.Services
                         else
                         {
                             InterfaceEpsonNF.ConfiguraCodigoBarras(100, 2, 2, 1, 20);
-                            retorno = InterfaceEpsonNF.ImprimeCodigoBarrasEAN13(printItem.Content);
+
+                            switch (printItem.BarCodeType)
+                            {
+                                case BarCodeType.Ean13:
+                                    retorno = InterfaceEpsonNF.ImprimeCodigoBarrasEAN13(printItem.Content);
+                                    break;
+
+                                case BarCodeType.Code128:
+                                    retorno = InterfaceEpsonNF.ImprimeCodigoBarrasCODE128(printItem.Content);
+                                    break;
+
+                                default:
+                                    retorno = InterfaceEpsonNF.ImprimeCodigoBarrasEAN13(printItem.Content);
+                                    break;
+                            }
                         }
 
                         if (retorno == 0)

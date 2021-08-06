@@ -43,7 +43,7 @@
       <HintPath>..\packages\Zeats.Legacy.PlainTextTable.HtmlParser.1.0.0.4\lib\net45\Zeats.Legacy.PlainTextTable.HtmlParser.dll</HintPath>
     </Reference>
     <Reference Include="Zeats.Legacy.PlainTextTable.Print, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zeats.Legacy.PlainTextTable.Print.1.0.0.4\lib\net45\Zeats.Legacy.PlainTextTable.Print.dll</HintPath>
+      <HintPath>..\packages\Zeats.Legacy.PlainTextTable.Print.1.0.0.5\lib\net45\Zeats.Legacy.PlainTextTable.Print.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
