@@ -34,7 +34,9 @@ namespace Zeats.Legacy.Epson.Services
 
                         int retorno;
                         if (printItem.FontType == FontType.Text)
+                        {
                             retorno = InterfaceEpsonNF.FormataTX(printItem.Content, tipoLetra, italico, sublinhado, expandido, enfatizado);
+                        }
                         else
                         {
                             InterfaceEpsonNF.ConfiguraCodigoBarras(100, 2, 2, 1, 20);
@@ -62,7 +64,6 @@ namespace Zeats.Legacy.Epson.Services
             }
             catch (Exception exception)
             {
-                TryRelease(printCollection);
                 Console.WriteLine(exception);
                 throw;
             }
@@ -81,7 +82,6 @@ namespace Zeats.Legacy.Epson.Services
             }
             catch (Exception exception)
             {
-                TryRelease(portName);
                 Console.WriteLine(exception);
                 throw;
             }
@@ -105,30 +105,6 @@ namespace Zeats.Legacy.Epson.Services
                 Printers.Add(portName, true);
 
             Printers[portName] = true;
-        }
-
-        private static void TryRelease(PrintCollection printCollection)
-        {
-            TryRelease(printCollection.Options.PortName);
-        }
-
-        private static void TryRelease(string portName)
-        {
-            lock (Lock)
-            {
-                try
-                {
-                    if (Printers.ContainsKey(portName))
-                        Printers[portName] = false;
-
-                    InterfaceEpsonNF.FechaPorta();
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    throw;
-                }
-            }
         }
     }
 }
