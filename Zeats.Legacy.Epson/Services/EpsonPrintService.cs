@@ -34,7 +34,9 @@ namespace Zeats.Legacy.Epson.Services
 
                         int retorno;
                         if (printItem.FontType == FontType.Text)
+                        {
                             retorno = InterfaceEpsonNF.FormataTX(printItem.Content, tipoLetra, italico, sublinhado, expandido, enfatizado);
+                        }
                         else
                         {
                             InterfaceEpsonNF.ConfiguraCodigoBarras(100, 2, 2, 1, 20);
@@ -58,6 +60,8 @@ namespace Zeats.Legacy.Epson.Services
                         if (retorno == 0)
                             throw new Exception("Ocorreu um erro ao enviar um comando de impressão para a impressora");
                     }
+
+                    TryRelease(printCollection);
                 }
             }
             catch (Exception exception)
@@ -77,6 +81,8 @@ namespace Zeats.Legacy.Epson.Services
                     TryOpenPort(portName);
 
                     InterfaceEpsonNF.AcionaGuilhotina(cut == CutType.Partial ? 0 : 1);
+
+                    TryRelease(portName);
                 }
             }
             catch (Exception exception)
