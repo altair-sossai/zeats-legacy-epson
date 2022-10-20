@@ -66,7 +66,6 @@ namespace Zeats.Legacy.Epson.Services
             }
             catch (Exception exception)
             {
-                TryRelease(printCollection);
                 Console.WriteLine(exception);
                 throw;
             }
@@ -87,7 +86,6 @@ namespace Zeats.Legacy.Epson.Services
             }
             catch (Exception exception)
             {
-                TryRelease(portName);
                 Console.WriteLine(exception);
                 throw;
             }
@@ -111,30 +109,6 @@ namespace Zeats.Legacy.Epson.Services
                 Printers.Add(portName, true);
 
             Printers[portName] = true;
-        }
-
-        private static void TryRelease(PrintCollection printCollection)
-        {
-            TryRelease(printCollection.Options.PortName);
-        }
-
-        private static void TryRelease(string portName)
-        {
-            lock (Lock)
-            {
-                try
-                {
-                    if (Printers.ContainsKey(portName))
-                        Printers[portName] = false;
-
-                    InterfaceEpsonNF.FechaPorta();
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    throw;
-                }
-            }
         }
     }
 }
